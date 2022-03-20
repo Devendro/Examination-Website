@@ -3,6 +3,7 @@ import { Row, Col, Form, Input, Avatar, Popover } from "antd";
 import { connect } from "react-redux";
 import "./Profile.css";
 import { Roles } from "../Roles/roles";
+import Avatara from './Avatar.jpg'
 
 class Profile extends Component {
   constructor(props) {
@@ -54,7 +55,7 @@ class Profile extends Component {
             <div className="avatar-wrapper">
               <Avatar
                 size={{ xs: 80, sm: 80, md: 80, lg: 80, xl: 90, xxl: 100 }}
-                src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                src={Avatara}
                 className="avatar-image"
               />
               <Popover content={this.state.isVerified ? verfied : notVerfied}>

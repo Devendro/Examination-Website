@@ -21,9 +21,9 @@ class TestPreview extends Component {
   componentWillUnmount() {
     clearInterval(this.state.intervalId);
   }
-  handleCounter =()=>{
+  handleCounter = () => {
     this.clickChild();
-  }
+  };
 
   loadData() {
     try {
@@ -70,20 +70,20 @@ class TestPreview extends Component {
       console.log(e);
     }
   }
-  
- 
 
   render() {
     return (
       <>
-        <Counter testID={this.state._id} totalMinutes={this.state.minutes} handleCounter ={this.handleCounter}/>
+        <Counter
+          testID={this.state._id}
+          totalMinutes={this.state.minutes}
+          handleCounter={this.handleCounter}
+        />
         <HandleLiveTest
           testID={this.state._id}
           totalMinutes={this.state.minutes}
           testName={this.state.testName}
-          testName={this.state.testName}
-          totalMinutes={this.state.minutes}
-          counterEnd ={click => this.clickChild = click}
+          counterEnd={(click) => (this.clickChild = click)}
         />
       </>
     );

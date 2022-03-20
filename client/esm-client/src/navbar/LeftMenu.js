@@ -46,7 +46,7 @@ const LeftMenu = (props) => {
   }
 
   return (
-    <div className="menu" style={style}>
+    <div className="menu" style={style} >
       <Menu mode={md ? "horizontal" : "inline"}>
         <Menu.Item key="01">
           <NavLink to={homeRoute}>

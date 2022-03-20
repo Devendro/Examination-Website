@@ -36,6 +36,10 @@ const TestSchema = mongoose.Schema({
   assignedTo: {
     type: Array,
   },
+  date: {
+    type: Date,
+    default: Date.now(),
+  },
   attempted: {
     type: Boolean,
     default: false,

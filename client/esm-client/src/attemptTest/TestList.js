@@ -69,7 +69,7 @@ export default function TestList(props) {
                         {test.testName}
                       </p>
                       <div className="test__time">
-                        <p className="time start">Start: Oct 26 2020 12:14PM</p>
+                        <p className="time start">{test.date}</p>
                         <p className="time end">End: Oct 29 2020 11:50PM</p>
                       </div>
                     </div>
@@ -87,7 +87,12 @@ export default function TestList(props) {
                         {test.testName}
                       </p>
                       <div className="test__time">
-                        <p className="time start">Start: Oct 26 2020 12:14PM</p>
+                        <p className="time start">
+                          Start : &nbsp;
+                          {test.date.substring(0, 10)}
+                          &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                          {test.date.substring(11, 16)} PM
+                        </p>
                         <p className="time end">End: Oct 29 2020 11:50PM</p>
                       </div>
                     </div>

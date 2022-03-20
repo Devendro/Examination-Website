@@ -36,9 +36,9 @@ class Navbar extends Component {
           <div className="leftMenu">
             <LeftMenu />
           </div>
-          <button className="barsMenu" type="primary" onClick={this.showDrawer}>
+          <Button className="barsMenu" type="primary" onClick={this.showDrawer}>
             <span className="barsBtn"></span>
-          </button>
+          </Button>
           <Drawer
             title="Menu"
             placement="right"

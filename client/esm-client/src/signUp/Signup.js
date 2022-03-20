@@ -166,8 +166,8 @@ function Signup(props) {
               >
                 <Select defaultValue="Class" disabled={showSelect}>
                   <Option value="IX">IX</Option>
-                  {/* <Option value="XI">XI</Option>
-                    <Option value="XII">XII</Option> */}
+                  <Option value="XI">XI</Option>
+                  <Option value="XII">XII</Option>
                 </Select>
               </Form.Item>
             </div>
