@@ -19,8 +19,8 @@ var transporter = nodemailer.createTransport(
     service: "gmail",
     host: "smtp.gmail.com",
     auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_PASS,
+      user: "devendromaurya@gmail.com",
+      pass: "9137091932",
     },
   })
 );
@@ -460,18 +460,19 @@ router.get("/confirm/:token", async (req, res) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded.user;
 
-    await User.updateOne({ _id: req.user.id }, { isVerified: true }, function (
-      err,
-      message
-    ) {
-      if (err) {
-        return res.status(500).json({ message: "Verification Failed" });
-      } else {
-        return res.status(200).json({
-          message: "Email Verified!",
-        });
+    await User.updateOne(
+      { _id: req.user._id },
+      { $set: { isVerified: true } },
+      function (err, message) {
+        if (err) {
+          return res.status(500).json({ message: "Verification Failed" });
+        } else {
+          return res.status(200).json({
+            message: "Email Verified!",
+          });
+        }
       }
-    });
+    );
   } catch (e) {
     console.error(e);
     return res.status(500).send({ message: "Verification Failed" });

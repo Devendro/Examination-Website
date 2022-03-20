@@ -77,7 +77,7 @@ export const fetchAttemptTests = (profileID) => async (dispatch) => {
     },
   };
 
-  await fetch(`/student/attempt-tests/${profileID}`, requestOptions)
+  await fetch(`http://localhost:5000/student/attempt-tests/${profileID}`, requestOptions)
     .then((response) => response.json())
     .then((data) => {
       if (data) {
@@ -106,7 +106,7 @@ export const fetchTests = (className) => async (dispatch) => {
     },
   };
 
-  await fetch(`/student/tests/${className}`, requestOptions)
+  await fetch(`http://localhost:5000/student/tests/${className}`, requestOptions)
     .then((response) => response.json())
     .then((data) => {
       if (data?.error?.name === "TokenExpiredError") {
@@ -165,7 +165,7 @@ export const submitTest = (data) => async (dispatch) => {
     body: JSON.stringify(postedData),
   };
 
-  await fetch(`/student/submit-test/${testID}`, requestOptions)
+  await fetch(`http://localhost:5000/student/submit-test/${testID}`, requestOptions)
     .then((response) => response.json())
     .then((data) => {
       if (data) {
@@ -196,7 +196,7 @@ export const fetchTeacherTests = (profileID) => async (dispatch) => {
     },
   };
 
-  await fetch(`/teacher/tests/${profileID}`, requestOptions)
+  await fetch(`http://localhost:5000/teacher/tests/${profileID}`, requestOptions)
     .then((response) => response.json())
     .then((data) => {
       if (data) {

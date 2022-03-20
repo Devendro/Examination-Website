@@ -32,7 +32,7 @@ export const fetchClasses = (values) => (dispatch) => {
       Authorization: localStorage.getItem("token"),
     },
   };
-  fetch("/teacher/classes", requestOptions)
+  fetch("http://localhost:5000/teacher/classes", requestOptions)
     .then((response) => response.json())
     .then((data) => {
       if (data?.error?.name === "TokenExpiredError") {
