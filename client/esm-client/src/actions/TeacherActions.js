@@ -104,6 +104,7 @@ export const fetchAssignedTests = (profileID) => async (dispatch) => {
           dispatch(receiveAssignedTest(data.obj));
         }
         // history.push("/studentHome");
+        console.log(data)
       }
     })
     .catch((error) => {
