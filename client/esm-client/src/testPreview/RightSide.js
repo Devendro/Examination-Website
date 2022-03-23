@@ -5,6 +5,7 @@ import { submitTest } from "../actions/testActions";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { logoutUser } from "../actions/authActions";
+import { withRouter } from "react-router-dom";
 
 class RightSide extends Component {
   constructor(props) {
@@ -122,7 +123,9 @@ class RightSide extends Component {
       };
     });
     this.props.submitTest(dataToSubmit);
-    this.props.signOut();
+    this.props.history.push({
+      pathname: "/",
+    });
     return;
   };
   render() {
@@ -136,7 +139,8 @@ class RightSide extends Component {
       <>
         <div className="descripiton__wrapper">
           <div className="question__no">
-            Question {this.state.activateQue + 1} out of {this.state.questionsData.length}
+            Question {this.state.activateQue + 1} out of{" "}
+            {this.state.questionsData.length}
           </div>
           {this.state.questionsData &&
             this.state.questionsData.map((question, index) => {
@@ -194,4 +198,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(RightSide);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(RightSide));

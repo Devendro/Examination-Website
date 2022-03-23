@@ -6,6 +6,7 @@ import Rules from "./Rules";
 import Questions from "./Questions";
 import RenderData from "./RenderData";
 import { submitTest, testCreatedFalse } from "../../actions/TeacherActions";
+import { withRouter } from 'react-router-dom';
 
 class CreateTest extends Component {
   constructor(props) {
@@ -136,6 +137,9 @@ class CreateTest extends Component {
     if (this.props.testCreated) {
       this.props.testCreatedFalse()
       this.openNotification();
+      this.props.history.push({
+        pathname: `/`,
+    });
     }
   }
 
@@ -232,8 +236,8 @@ class CreateTest extends Component {
                 >
                   <Select defaultValue="Class">
                     <Option value="IX">IX</Option>
-                    {/* <Option value="XI">XI</Option>
-                    <Option value="XII">XII</Option> */}
+                    <Option value="XI">XI</Option>
+                    <Option value="XII">XII</Option>
                   </Select>
                 </Form.Item>
               </div>
@@ -293,4 +297,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateTest);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CreateTest));

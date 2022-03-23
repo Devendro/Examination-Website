@@ -87,6 +87,7 @@ export const fetchAttemptTests = (profileID) => async (dispatch) => {
           dispatch(receiveAttemptTests(data.obj));
         }
       }
+
     })
     .catch((error) => {
       //Do something with the error if you want!
@@ -114,6 +115,7 @@ export const fetchTests = (className) => async (dispatch) => {
       } else {
         dispatch(receiveTests(data.obj));
       }
+      console.log(data)
     })
     .catch((error) => {
       //Do something with the error if you want!
