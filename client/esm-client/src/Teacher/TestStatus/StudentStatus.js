@@ -37,12 +37,12 @@ export default function StudentStatus(props) {
               Wrong Answers:{" "}
               <span className="status__testname danger">{student.wrong}</span>
             </div>
-            <div className="status__test__unanswered">
+            {/* <div className="status__test__unanswered">
               Not Answered:{" "}
               <span className="status__testname primary-wihtoutFont">
                 {student.unanswered}
               </span>
-            </div>
+            </div> */}
           </div>
         </div>
       </Col>
